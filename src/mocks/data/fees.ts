@@ -1,4 +1,4 @@
-import { FeeRecord, SemesterSummary, FeeType } from '@/types/payment';
+import { FeeRecord, SemesterSummary } from '@/types/payment';
 
 const generateFees = (): { fees: FeeRecord[], semesters: SemesterSummary[] } => {
     const fees: FeeRecord[] = [];
@@ -8,7 +8,6 @@ const generateFees = (): { fees: FeeRecord[], semesters: SemesterSummary[] } => 
         const semId = `sem${i}`;
         const isPast = i < 5; // Sem 1-4 are past/paid
         const isCurrent = i === 5; // Sem 5 is current/partial
-        const isFuture = i > 5; // Sem 6-7 are future/unpaid
 
         const semFees: FeeRecord[] = [
             {

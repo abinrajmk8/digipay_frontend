@@ -3,8 +3,7 @@ import Sidebar from '@/components/layout/Sidebar';
 import { SemesterCard } from '@/components/payments/SemesterCard';
 import { PaymentConfirmModal } from '@/components/payments/PaymentConfirmModal';
 import { SemesterSummary, FeeRecord } from '@/types/payment';
-import { Loader2, Filter } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Loader2 } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import axios from 'axios';
 
@@ -62,16 +61,19 @@ export default function PaymentsPage() {
     };
 
     const handlePaymentConfirm = async (method: string) => {
-        // Note: setIsProcessing is now handled internally by the modal for the UI transition,
-        // but we can still track it here if needed for other things.
-        // The modal calls this function and expects a Promise.
+        setIsProcessing(true);
+        try {
+            const payload = paymentContext === 'semester'
+                ? { semesterId: targetSemesterId, method }
+                : { feeId: selectedFees[0].id, method };
 
-        const payload = paymentContext === 'semester'
-            ? { semesterId: targetSemesterId, method }
-            : { feeId: selectedFees[0].id, method };
-
-        await axios.post('/api/payments/pay', payload);
-        await fetchFees(); // Refresh data in background
+            await axios.post('/api/payments/pay', payload);
+            await fetchFees(); // Refresh data in background
+        } catch (error) {
+            console.error('Payment failed', error);
+        } finally {
+            setIsProcessing(false);
+        }
     };
 
     const handleDownloadReceipt = async (fee: FeeRecord) => {

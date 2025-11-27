@@ -280,9 +280,8 @@ export const handlers = [
         });
     }),
 
-    http.post('/api/user/bank/verify-phone', async ({ request }) => {
+    http.post('/api/user/bank/verify-phone', async () => {
         await delay(500);
-        const { phone } = await request.json() as any;
         const verificationId = `VER-BANK-${Date.now()}`;
         const otp = '123456';
 
@@ -302,7 +301,7 @@ export const handlers = [
         });
     }),
 
-    http.post('/api/user/change-password', async ({ request }) => {
+    http.post('/api/user/change-password', async () => {
         await delay(800);
         // In a real app, we'd verify old password.
         return HttpResponse.json({ success: true });
@@ -379,9 +378,7 @@ export const handlers = [
         });
     }),
 
-    http.post('/api/transactions/export', async ({ request }) => {
-        await delay(1000);
-        const url = new URL(request.url);
+    http.post('/api/transactions/export', async () => {
         // In a real app, we'd apply filters from body/query to generate CSV
         // For demo, just return a dummy CSV
         const csvContent = "ID,Date,Amount,Status\nTXN-001,2025-01-01,1000,SUCCESS\nTXN-002,2025-01-02,500,PENDING";

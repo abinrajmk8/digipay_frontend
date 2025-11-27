@@ -1,5 +1,4 @@
 import { Transaction } from '@/types/transaction';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter } from '@/components/ui/sheet'; // Assuming Sheet component exists or using Dialog as fallback
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -39,8 +38,8 @@ export function TransactionDetailDrawer({ transaction, onClose, onDownloadReceip
                 <div className="space-y-6 py-4">
                     {/* Status Banner */}
                     <div className={`p-4 rounded-lg flex items-center justify-between ${transaction.status === 'SUCCESS' ? 'bg-green-50 text-green-800' :
-                            transaction.status === 'PENDING' ? 'bg-amber-50 text-amber-800' :
-                                'bg-red-50 text-red-800'
+                        transaction.status === 'PENDING' ? 'bg-amber-50 text-amber-800' :
+                            'bg-red-50 text-red-800'
                         }`}>
                         <div className="flex flex-col">
                             <span className="text-xs font-semibold uppercase tracking-wider">Status</span>

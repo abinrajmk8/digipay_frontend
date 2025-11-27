@@ -7,7 +7,6 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import { FeeRecord } from "@/types/payment"
 import { Loader2, CreditCard, Wallet, Banknote, CheckCircle2, Download, AlertCircle } from "lucide-react"
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"

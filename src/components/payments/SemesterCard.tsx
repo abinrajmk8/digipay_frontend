@@ -4,8 +4,7 @@ import { FeeRow } from '@/components/payments/FeeRow';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, ChevronUp, CheckCircle2, AlertCircle, Download } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
 
 interface SemesterCardProps {
     semester: SemesterSummary;

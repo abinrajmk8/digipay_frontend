@@ -1,15 +1,12 @@
 import { TimelineEntry } from '@/types/complaint';
-import { cn } from '@/lib/utils';
-import { CheckCircle2, Circle, Clock } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { CheckCircle2, Clock } from 'lucide-react';
 
 interface TimelineProps {
     entries: TimelineEntry[];
-    currentStage: string;
+    currentStage?: string;
 }
 
-export function Timeline({ entries, currentStage }: TimelineProps) {
-    const { t } = useTranslation();
+export function Timeline({ entries }: TimelineProps) {
 
     return (
         <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">

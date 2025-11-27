@@ -123,36 +123,6 @@ const SelectContent: React.FC<SelectContentProps> = ({ children, className }) =>
     const ref = React.useRef<HTMLDivElement>(null)
 
     React.useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (ref.current && !ref.current.contains(event.target as Node) && open) {
-                // Check if the click was on the trigger (to avoid double toggle)
-                // Actually, trigger click toggles it, so if we click outside content but on trigger, 
-                // trigger's onClick handles it. We just need to close if it's strictly outside.
-                // A simple way is to check if target is closest to the trigger.
-                // But for this simple implementation, let's just close it.
-                // If the user clicked the trigger, the trigger's onClick will fire.
-                // If open=true, trigger onClick sets open=false.
-                // If we also setOpen(false) here, it's fine.
-                // But if the trigger is OUTSIDE the content (which it is), we might have a race condition.
-                // Usually we check if the click target is NOT the trigger.
-                // But we don't have ref to trigger here easily.
-                // Let's rely on a slight delay or just standard behavior.
-                // Actually, standard behavior: clicking trigger toggles.
-                // If we click trigger while open:
-                // 1. mousedown fires on document -> handleClickOutside -> setOpen(false)
-                // 2. click fires on button -> setOpen(!false) -> setOpen(true)
-                // Result: It stays open (or re-opens). This is annoying.
-                // Fix: Check if click target is inside the Select container?
-                // The Select container wraps everything.
-                // But SelectContent is absolute, so it might be physically outside if using portals (we aren't).
-                // Since we aren't using portals, SelectContent is inside Select div.
-                // So we can check if click is inside the Select wrapper?
-                // But `Select` component doesn't expose a ref easily to `SelectContent`.
-                // Let's just use a simple "click outside" that ignores if it's in the trigger?
-                // We can add a `data-select-trigger` attribute to trigger and check for it.
-            }
-        }
-
         const handleDocumentClick = (e: MouseEvent) => {
             if (ref.current && !ref.current.contains(e.target as Node)) {
                 // If the click target is the trigger, let the trigger handle it.

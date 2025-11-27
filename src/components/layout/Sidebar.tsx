@@ -6,9 +6,8 @@ import {
     History,
     MessageSquareWarning,
     User,
-    Settings,
-    LogOut,
-    FileUp
+
+    LogOut
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 

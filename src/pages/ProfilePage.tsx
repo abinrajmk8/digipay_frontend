@@ -9,7 +9,7 @@ import { VerificationModal } from '@/components/profile/VerificationModal';
 import { ChangePasswordModal } from '@/components/profile/ChangePasswordModal';
 import { Loader2, User, Mail, Phone, MapPin, ChevronDown, ChevronUp, Edit2, Save, X } from 'lucide-react';
 import axios from 'axios';
-import { cn } from '@/lib/utils';
+
 
 export default function ProfilePage() {
     const [profile, setProfile] = useState<Profile | null>(null);

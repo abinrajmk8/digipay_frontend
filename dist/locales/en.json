@@ -1,0 +1,107 @@
+{
+    "app": {
+        "title": "DTE DigiPay",
+        "subtitle": "Directorate of Technical Education, Kerala"
+    },
+    "nav": {
+        "home": "Home",
+        "login": "Login",
+        "help": "Help",
+        "dashboard": "Dashboard",
+        "payments": "Payments",
+        "transactions": "Transactions",
+        "complaints": "Complaints",
+        "profile": "Profile",
+        "logout": "Logout"
+    },
+    "landing": {
+        "heroTitle": "Secure & Fast Fee Payments",
+        "heroSubtitle": "The official payment portal for technical education institutions in Kerala.",
+        "payNow": "Pay Now",
+        "checkStatus": "Check Payment Status"
+    },
+    "auth": {
+        "loginTitle": "Login to DigiPay",
+        "username": "Username / Email",
+        "password": "Password",
+        "loginBtn": "Login",
+        "forgotPassword": "Forgot Password?",
+        "institutionLogin": "Login as Institution",
+        "firstLoginChange": "Please change your password for security.",
+        "otpPlaceholder": "Enter OTP"
+    },
+    "payment": {
+        "newPayment": "New Payment",
+        "selectType": "Select Payment Type",
+        "tuition": "Tuition Fee",
+        "exam": "Exam Fee",
+        "hostel": "Hostel Fee",
+        "other": "Other",
+        "amount": "Amount",
+        "pay": "Pay",
+        "success": "Payment Successful",
+        "failure": "Payment Failed",
+        "feeType": "Fee Type",
+        "dueDate": "Due Date",
+        "status": "Status",
+        "action": "Action",
+        "downloadReceipt": "Receipt"
+    },
+    "complaints": {
+        "title": "Complaints",
+        "registerNew": "Register New Complaint",
+        "submit": "Submit Complaint",
+        "confidential": "Confidential",
+        "status": {
+            "open": "Open",
+            "in_progress": "In Progress",
+            "resolved": "Resolved"
+        }
+    },
+    "profile": {
+        "title": "My Profile",
+        "personalInfo": "Personal Information",
+        "viewFull": "View Full Profile",
+        "hideFull": "Hide Full Profile",
+        "changePassword": "Change Password",
+        "verify": {
+            "title": "Verify Action",
+            "instructions": "Please enter the OTP sent to your registered contact.",
+            "submit": "Verify"
+        }
+    },
+    "transactions": {
+        "title": "Transactions",
+        "total": "Total Transactions",
+        "success": "Successful",
+        "pending": "Pending",
+        "failed": "Failed",
+        "export": "Export CSV",
+        "filter": {
+            "search": "Search by ID, Name...",
+            "type": "Transaction Type",
+            "status": "Status"
+        }
+    },
+    "payments": {
+        "title": "Fee Payments",
+        "payNow": "Pay Now",
+        "payAll": "Pay All",
+        "downloadReceipt": "Receipt",
+        "status": {
+            "paid": "Paid",
+            "unpaid": "Unpaid",
+            "partial": "Partial"
+        },
+        "methods": {
+            "card": "Credit / Debit Card",
+            "upi": "UPI / Wallets",
+            "netbank": "Netbanking"
+        },
+        "messages": {
+            "processing": "Processing Payment...",
+            "success": "Payment Successful!",
+            "failed": "Payment Failed"
+        }
+    }
+}

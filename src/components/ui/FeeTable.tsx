@@ -1,6 +1,6 @@
 import { FeeRecord } from '@/types/payment';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge'; // Assuming Badge component exists or will use a simple span
+
 import { Download, CreditCard } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 

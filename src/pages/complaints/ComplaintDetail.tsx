@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Complaint, COMPLAINT_STAGES } from '@/types/complaint';
+import { Complaint } from '@/types/complaint';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Timeline } from '@/components/complaints/Timeline';
