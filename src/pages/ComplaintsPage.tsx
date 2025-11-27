@@ -21,9 +21,10 @@ export default function ComplaintsPage() {
         try {
             setIsLoading(true);
             const response = await axios.get('/api/complaints');
-            setComplaints(response.data);
-            if (response.data.length > 0 && !selectedComplaintId && !isCreatingNew) {
-                setSelectedComplaintId(response.data[0].id);
+            const data = Array.isArray(response.data) ? response.data : [];
+            setComplaints(data);
+            if (data.length > 0 && !selectedComplaintId && !isCreatingNew) {
+                setSelectedComplaintId(data[0].id);
             }
         } catch (error) {
             console.error('Failed to fetch complaints', error);

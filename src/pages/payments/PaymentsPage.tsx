@@ -28,8 +28,8 @@ export default function PaymentsPage() {
         setIsLoading(true);
         try {
             const response = await axios.get('/api/user/fees?studentId=STU-1001');
-            setSemesters(response.data.semesters);
-            setFees(response.data.fees);
+            setSemesters(Array.isArray(response.data?.semesters) ? response.data.semesters : []);
+            setFees(Array.isArray(response.data?.fees) ? response.data.fees : []);
         } catch (error) {
             console.error('Failed to fetch fees', error);
         } finally {
